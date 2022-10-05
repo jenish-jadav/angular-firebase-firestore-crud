@@ -14,15 +14,18 @@ jobs:
   firebase-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
       - uses: actions/setup-node@master
         with:
           node-version: '16.x'
+      - run: echo ${{secrets.ENVIRONMENT}}
       - run: echo '${{ secrets.ENVIRONMENT }}' > src/environments/environment.ts
-      - run: npm install
-      - run: npm run build
-      - uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
+      - run: ls -lh src/environments
+      - run: cat src/environments/environment.ts
+      # - run: npm install
+      # - run: npm run build
+      # - uses: w9jds/firebase-action@master
+      #  with:
+      #    args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
