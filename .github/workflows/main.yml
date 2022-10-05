@@ -18,8 +18,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: '16.x'
-      - run: echo ${{secrets.ENVIRONMENT}}
-      - run: echo '${{ secrets.ENVIRONMENT }}' > src/environments/environment.ts
+      - run: echo ${{ secrets.ENVIRONMENT_FILE }} > src/environments/environment.ts
       - run: ls -lh src/environments
       - run: cat src/environments/environment.ts
       # - run: npm install
