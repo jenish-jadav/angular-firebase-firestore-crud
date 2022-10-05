@@ -18,13 +18,9 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: '16.x'
-      - run: ls
-      - run: mkdir -p ./src/environments/
-      - run: echo ${{ secrets.ENVIRONMENT_FILE }} > ./src/environments/environment.ts
-      - run: echo ${{ secrets.ENVIRONMENT_FILE }} > ./src/environments/environment.prod.ts
+      - run: node scripts/generate-env.js "${{ secrets.ENVIRONMENT_FILE }}"
       - run: npm install
-      - run: rm -f "./src/environments/environment copy.ts"
-      - run: npm run build
+      - run: npm run build:prod
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting

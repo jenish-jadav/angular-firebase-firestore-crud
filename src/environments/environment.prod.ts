@@ -1,3 +1,1 @@
-export const environment = {
-  production: true
-};
+export const environment = { production: true, firebaseConfig : { apiKey: 'AIzaSyDjruesofNXkygwGvk2Pd-G6yhI-VLQPQY', authDomain: 'bardoli-demo.firebaseapp.com', projectId: 'bardoli-demo', storageBucket: 'bardoli-demo.appspot.com', messagingSenderId: '614565438052', appId: '1:614565438052:web:76dd82b4534d69a608f571', measurementId: 'G-CYSNCW72DT' } }
