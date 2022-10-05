@@ -1,0 +1,73 @@
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex">
+        <i class="mdi mdi-home text-primary hover-cursor" [routerLink]="'/admin'"></i>
+        <p class="text-muted mb-0">&nbsp;/&nbsp;</p>
+        <p class="text-muted mb-0">Questions</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 grid-margin">
+      <div class="d-flex justify-content-between flex-wrap">
+
+        <div class="d-flex align-items-end flex-wrap">
+          <div class="mr-md-3 mr-xl-5">
+            <h2>Manage Questions</h2>
+          </div>
+
+        </div>
+        <div class="d-flex justify-content-between align-items-end flex-wrap">
+          <button (click)="onAddNewRecordClick()" class="btn btn-primary mt-2 mt-xl-0">Add Question</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive pt-3">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Question</th>
+                  <th>Type</th>
+                  <th>Active</th>
+                  <th class="text-center">Edit</th>
+                  <th class="text-center">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let question of (questionList | async); let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{question.question}}</td>
+                  <td>{{question.type}}</td>
+                  <td>{{question.active}}</td>
+                  <td class="text-center">
+                    <button (click)="onEditRecordClick(question.id)" type="button"
+                      class="btn btn-inverse-info btn-rounded btn-icon">
+                      <i class="fas fa-pencil-alt"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button (click)="onDeleteRecordClick(question.id)" type="button"
+                      class="btn btn-inverse-danger btn-rounded btn-icon">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td *ngIf="errorMessage" colspan="7" class="text-center text-danger">{{errorMessage}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

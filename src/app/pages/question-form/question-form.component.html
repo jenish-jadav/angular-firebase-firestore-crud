@@ -1,0 +1,63 @@
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex">
+                <i class="mdi mdi-home text-primary hover-cursor" [routerLink]="'/admin'"></i>
+                <p class="text-muted mb-0">&nbsp;/&nbsp;</p>
+                <p class="text-primary mb-0 hover-cursor" [routerLink]="'/admin/questions'">Questions</p>
+                <p class="text-muted mb-0">&nbsp;/&nbsp;</p>
+                <p class="text-muted mb-0">{{ isNewRecord ? 'Add' : 'Edit'}} Question</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-between flex-wrap">
+                <div class="d-flex align-items-end flex-wrap">
+                    <div class="mr-md-3 mr-xl-5">
+                        <h2>{{ isNewRecord ? 'Add' : 'Edit'}} Question</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form class="forms-sample" [formGroup]="inputForm">
+                        <div class="form-group">
+                            <label for="question">Question</label>
+                            <input type="text" class="form-control" id="question" placeholder="Question"
+                                formControlName="question">
+                        </div>
+                        <div class="form-group">
+                            <label for="question-type">Type</label>
+                            <select class="form-control" id="question_type" formControlName="question_type">
+                                <option>Smiley</option>
+                                <option>Rating</option>
+                                <option>Yes/No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-check form-check-flat form-check-primary">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" formControlName="question_active"
+                                    id="question_active">
+                                Active
+                                <i class="input-helper"></i>
+                            </label>
+                        </div>
+                        <button (click)="onSubmitClick()" [disabled]="!inputForm.valid" type="button"
+                            class="btn btn-primary me-2">{{ isNewRecord ? 'Submit' : 'Update'}}</button>&nbsp;&nbsp;
+                        <button (click)="onCancelClick()" type="button" class="btn btn-light">Cancel</button>
+                        <br />
+                        <br />
+                        <div *ngIf="errorMessage" class="text-danger">{{errorMessage}}</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
