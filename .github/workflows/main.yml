@@ -22,8 +22,9 @@ jobs:
       - run: mkdir -p ./src/environments/
       - run: echo ${{ secrets.ENVIRONMENT_FILE }} > ./src/environments/environment.ts
       - run: npm install
+      - run: rm -f "./src/environments/environment copy.ts"
       - run: ls ./src/environments
-      - run: cat ./src/environments
+      - run: cat ./src/environments/environment.ts
       - run: npm run build
       - uses: w9jds/firebase-action@master
         with:
