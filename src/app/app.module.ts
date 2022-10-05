@@ -7,7 +7,7 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
 import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ToastrModule } from 'ngx-toastr';
-import {environment} from '../environments/environment'
+import {environment} from 'src/environments/environment'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
