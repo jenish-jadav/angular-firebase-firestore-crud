@@ -1,7 +1,7 @@
 ### Demo
-Link: https://bardoli-demo.web.app
-Email: demo@gmail.com
-Passowrd: 123456
+Link: https://bardoli-demo.web.app  
+Email: demo@gmail.com  
+Passowrd: 123456  
 
 # Firestore CRUD with Firebase Authentication
 

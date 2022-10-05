@@ -1,12 +1,6 @@
 {
   "hosting": {
     "public": "dist/firebase-demo",
-    "rewrites": [
-      {
-        "source": "**"
-        
-      }
-    ],
     "ignore": [
       "firebase.json",
       "**/.*",
