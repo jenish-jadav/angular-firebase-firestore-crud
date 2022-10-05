@@ -18,9 +18,12 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: '16.x'
+      - run: ls
       - run: mkdir -p ./src/environments/
       - run: echo ${{ secrets.ENVIRONMENT_FILE }} > ./src/environments/environment.ts
       - run: npm install
+      - run: ls ./src/environments
+      - run: cat ./src/environments
       - run: npm run build
       - uses: w9jds/firebase-action@master
         with:
