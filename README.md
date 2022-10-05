@@ -1,3 +1,8 @@
+### Demo
+Link: https://bardoli-demo.web.app
+Email: demo@gmail.com
+Passowrd: 123456
+
 # Firestore CRUD with Firebase Authentication
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.

@@ -25,7 +25,7 @@ export class AdminContainerComponent implements OnInit {
   listenAuthStatusChange(){
      this.auth.currentUser.then((user)=>{
       this.userData = user;
-      this.name=user?.displayName;
+      this.name = user?.displayName || 'Guest';
     });
   }
 
